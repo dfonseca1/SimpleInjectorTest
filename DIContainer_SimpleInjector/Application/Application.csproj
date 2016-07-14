@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B04ED652-5B4D-4A3F-B072-4BC33A078E36}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Application</RootNamespace>
+    <AssemblyName>Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SimpleInjector, Version=3.2.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SimpleInjector.3.2.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DIContainer.Business.Interfaces\DIContainer.Business.Interfaces.csproj">
+      <Project>{041FD02B-9D91-49E7-AD74-910A069354F9}</Project>
+      <Name>DIContainer.Business.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIContainer.Domain.Interfaces\DIContainer.Domain.Interfaces.csproj">
+      <Project>{73e41f6c-e2f0-40a2-8929-3ee276feee83}</Project>
+      <Name>DIContainer.Domain.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIContainer.Domain\DIContainer.Domain.csproj">
+      <Project>{e65efde1-315a-4e80-8b40-95c21aa35f14}</Project>
+      <Name>DIContainer.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIContainer.Repository.Interfaces\DIContainer.Repository.Interfaces.csproj">
+      <Project>{397a8b12-82f0-4d83-8ad3-2538d4556190}</Project>
+      <Name>DIContainer.Repository.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIContainer.Repository\DIContainer.Repository.csproj">
+      <Project>{b0ae77d3-c271-47f6-b1ef-702c033bb8ce}</Project>
+      <Name>DIContainer.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIContainer.SimpleInjector\DIContainer.SimpleInjector.csproj">
+      <Project>{cc27c6bc-57f6-43f6-bd35-389774757261}</Project>
+      <Name>DIContainer.SimpleInjector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
